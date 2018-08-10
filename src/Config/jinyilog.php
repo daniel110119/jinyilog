@@ -8,7 +8,7 @@
 
 return [
     'model'=>[
-        'Users'=>'\App\Models\Users',  #模型
+        #模型 'Users'=>'\App\Models\Users',
     ],
     'config'=>[
         'header'=>[
