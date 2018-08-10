@@ -13,6 +13,6 @@
     
 - laravel>5.5 自动注册
 
-- 迁移数据卢 php artisan migrate
+- 迁移数据库 php artisan migrate
 
 - 发布配置 php artisan vendor:publish  --provider="Jinyi\Jinyilog\JinYiLogServiceProvider"
