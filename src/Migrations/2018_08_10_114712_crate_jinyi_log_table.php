@@ -18,7 +18,7 @@ class CrateJinYiLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('jinyi_log)', function (Blueprint $table) {
+        Schema::create('jinyi_log', function (Blueprint $table) {
             $table->increments('id');
             $table->string("uid")->comment("用户id");
             $table->string("username")->comment("姓名");
