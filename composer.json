@@ -22,7 +22,7 @@
 	        "Jinyi\\Jinyilog\\JinYiLogServiceProvider"
 	      ],
 	       "aliases": {
-	        "JinYiLog": " Jinyi\\Jinyilog\\Facades\\JinYiLogFacade"
+	        "JinYiLog": "Jinyi\\Jinyilog\\Facades\\JinYiLogFacade"
 	      }
 	    }
  	 }

@@ -8,10 +8,10 @@
 
 namespace Jinyi\Jinyilog;
 
-use Jinyi\Jinyilog\Models\JinYiLog;
 use Jinyi\Jinyilog\Repositories\JinYiLogRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\ServiceProvider;
+use JinYiLog;
 
 class JinYiLogServiceProvider extends ServiceProvider
 {
