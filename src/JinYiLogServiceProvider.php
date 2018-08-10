@@ -22,17 +22,21 @@ class JinYiLogServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
-
-        $header =config("actionlog.config.header");
+        $request=app(Request::class);
+        $header =config("jinyilog.config.header");
         $data = $request->header($header['name']);
-        if($data){
-            $userinfo = json_decode(decrypt($data),true);
-            $userinfo = collect(config("actionlog.config.header.parameter"))
-                ->map(function($item) use($userinfo){
-                    return $userinfo[$item];
-                });
+        if($data && $header){
+            try {
+                $userinfo = json_decode(decrypt($data),true);
+                $userinfo = collect(config("jinyilog.config.header.parameter"))
+                    ->map(function($item) use($userinfo){
+                        return $userinfo[$item];
+                    });
+            } catch (\Exception $e) {
+                $userinfo = config("jinyilog.config.default");
+            }
         }else{
-            $userinfo = config("actionlog.config.default");
+            $userinfo = config("jinyilog.config.default");
         }
 
         // Publish configuration files
@@ -42,10 +46,10 @@ class JinYiLogServiceProvider extends ServiceProvider
 
 
         $this->publishes([
-            __DIR__.'/config/actionlog.php' => config_path('actionlog.php'),
+            __DIR__.'/config/jinyilog.php' => config_path('jinyilog.php'),
         ], 'config');
 
-        $model = config("actionlog.model");
+        $model = config("jinyilog.model");
         if($model){
             foreach($model as $k => $v) {
                 $v::updated(function($data) use($k,$userinfo){
