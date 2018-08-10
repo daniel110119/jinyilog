@@ -1,0 +1,29 @@
+{
+    "name": "jinyi/jinylog",
+    "description": "Laravel package",
+    "require": {
+        "php": "^5.5.9 || ^7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "卢爸爸",
+            "email": "2530262tel@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jinyi\\Jinyilog\\": "src/"
+        }
+    },
+     "extra": {
+	    "laravel": {
+	      "providers": [
+	        "Jinyi\\Jinyilog\\JinYiLogServiceProvider"
+	      ],
+	       "aliases": {
+	        "JinYiLog": " Jinyi\\Jinyilog\\Facades\\JinYiLogFacade"
+	      }
+	    }
+ 	 }
+}
