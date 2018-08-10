@@ -12,7 +12,7 @@ return [
     ],
     'config'=>[
         'header'=>[
-            'name'=>'Authorization',  #对应无状态中header中认证的 加密字段
+            'name'=>'Authorization',  #对应无状态中header中认证的 加密字段  加密 采用 becrypt(json_encode())
             'parameter'=>[            #对应插入的加密内容中的key
                 'uid'=>'你对应的字段',
                 'username'=>'你对应的名字'
