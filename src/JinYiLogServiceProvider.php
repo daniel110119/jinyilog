@@ -22,6 +22,7 @@ class JinYiLogServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
+
         $request=app(Request::class);
         $header =config("jinyilog.config.header");
         $data = $request->header($header['name']);
@@ -74,7 +75,7 @@ class JinYiLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton("ActionLog",function($app){
+        $this->app->singleton("JinYiLog",function($app){
             return new JinYiLogRepository();
         });
     }
